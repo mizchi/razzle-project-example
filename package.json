@@ -2,11 +2,14 @@
   "name": "my-razzle-app",
   "version": "2.0.0-alpha.2",
   "license": "MIT",
+  "engines": {
+    "node": "9.x.x"
+  },
   "scripts": {
-    "start": "razzle start",
+    "start": "NODE_ENV=production node build/server.js",
+    "start:dev": "razzle start",
     "build": "razzle build",
-    "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "test": "razzle test --env=jsdom"
   },
   "dependencies": {
     "@jaredpalmer/after": "^1.3.0",
