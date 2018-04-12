@@ -1,14 +1,17 @@
 {
-  "name": "my-razzle-app",
-  "version": "2.0.0-alpha.2",
+  "name": "razzle-project-example",
+  "private": true,
+  "version": "0.1.0",
   "license": "MIT",
   "engines": {
     "node": "9.x.x"
   },
   "scripts": {
-    "start": "NODE_ENV=production node build/server.js",
-    "start:dev": "razzle start",
+    "now-start": "NODE_ENV=production node build/server.js",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "start": "razzle start",
     "build": "razzle build",
+    "deploy": "now -e NODE_ENV=production",
     "test": "razzle test --env=jsdom"
   },
   "dependencies": {
