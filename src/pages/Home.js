@@ -1,7 +1,10 @@
+/* @flow */
 import React from 'react'
 import Layout from '../components/Layout'
 
-class Home extends React.Component {
+type Props = {}
+
+class Home extends React.Component<Props> {
   render() {
     return (
       <Layout>

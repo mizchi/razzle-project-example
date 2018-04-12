@@ -1,9 +1,12 @@
+/* @flow */
 import React from 'react'
 import Layout from '../components/Layout'
 import { Route, Link } from 'react-router-dom'
 
-class Detail extends React.Component {
-  static async getInitialProps({ req, res, match }) {
+type Props = { id: string }
+
+class Detail extends React.Component<Props> {
+  static async getInitialProps({ req, res, match }: *) {
     return { id: match.params.id }
   }
 

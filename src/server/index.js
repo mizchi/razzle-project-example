@@ -1,15 +1,15 @@
-import express from 'express'
-import { render } from '@jaredpalmer/after'
-import routes from '../routes'
-import MyDocument from '../pages/_Document'
+import express from "express"
+import { render } from "@jaredpalmer/after"
+import routes from "../routes"
+import MyDocument from "../pages/_Document"
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
 const server = express()
 server
-  .disable('x-powered-by')
+  .disable("x-powered-by")
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .get('/*', async (req, res) => {
+  .get("/*", async (req, res) => {
     try {
       // Pass document in here.
       const html = await render({

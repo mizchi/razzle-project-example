@@ -1,9 +1,10 @@
+/* @flow */
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { AfterRoot, AfterData } from '@jaredpalmer/after'
 
-export default class Document extends React.Component {
-  static async getInitialProps({ assets, data, renderPage }) {
+export default class Document extends React.Component<*> {
+  static async getInitialProps({ assets, data, renderPage }: *) {
     const sheet = new ServerStyleSheet()
     const page = await renderPage(App => props =>
       sheet.collectStyles(<App {...props} />)

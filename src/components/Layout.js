@@ -1,6 +1,12 @@
-import React, { Fragment } from 'react'
+/* @flow */
+import React, { Fragment, type Node } from 'react'
 import { NavLink } from 'react-router-dom'
-export default props => {
+
+type Props = {
+  children?: Node
+}
+
+export default (props: Props) => {
   return (
     <Fragment>
       <header>
