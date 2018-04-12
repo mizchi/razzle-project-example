@@ -9,6 +9,8 @@ export default props => {
         <NavLink to="/about">About</NavLink>
         |
         <NavLink to="/detail/a">Detail_A</NavLink>
+        |
+        <NavLink to="/detail/a/more">Detail_A_more</NavLink>
       </header>
       <content>{props.children}</content>
     </Fragment>

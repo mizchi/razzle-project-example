@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from './Layout'
+import Layout from '../components/Layout'
 
 class About extends React.Component {
   static async getInitialProps({ req, res, match, history, location, ...ctx }) {
