@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
 
 class About extends React.Component {
@@ -9,7 +10,7 @@ class About extends React.Component {
   render() {
     return (
       <Layout>
-        <h1>About</h1>
+        <Title>About</Title>
         {this.props.stuff ? <div>about</div> : 'loading...'}
       </Layout>
     )
@@ -17,3 +18,7 @@ class About extends React.Component {
 }
 
 export default About
+
+const Title = styled.h1`
+  color: red;
+`

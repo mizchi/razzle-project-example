@@ -1,7 +1,7 @@
 import express from 'express'
 import { render } from '@jaredpalmer/after'
-import routes from './routes'
-import MyDocument from './pages/Document'
+import routes from '../routes'
+import MyDocument from '../pages/_Document'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from './components/Layout'
 
 import { asyncComponent } from '@jaredpalmer/after'
 
@@ -8,7 +9,7 @@ export default [
     exact: true,
     component: asyncComponent({
       loader: () => import('./pages/Home'), // required
-      Placeholder: () => <div>...LOADING...</div> // this is optional, just returns null by default
+      Placeholder: () => <Layout /> // this is optional, just returns null by default
     })
   },
   {
@@ -16,7 +17,7 @@ export default [
     exact: true,
     component: asyncComponent({
       loader: () => import('./pages/About'), // required
-      Placeholder: () => <div>...LOADING...</div> // this is optional, just returns null by default
+      Placeholder: () => <Layout /> // this is optional, just returns null by default
     })
   },
   {
@@ -24,7 +25,7 @@ export default [
     exact: false,
     component: asyncComponent({
       loader: () => import('./pages/Detail'), // required
-      Placeholder: () => <div>...LOADING...</div> // this is optional, just returns null by default
+      Placeholder: () => <Layout /> // this is optional, just returns null by default
     })
   }
 ]

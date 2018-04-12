@@ -1,15 +1,19 @@
-// ./src/Document.js
 import React from 'react'
+import { ServerStyleSheet } from 'styled-components'
 import { AfterRoot, AfterData } from '@jaredpalmer/after'
 
-class Document extends React.Component {
+export default class Document extends React.Component {
   static async getInitialProps({ assets, data, renderPage }) {
-    const page = await renderPage()
-    return { assets, data, ...page }
+    const sheet = new ServerStyleSheet()
+    const page = await renderPage(App => props =>
+      sheet.collectStyles(<App {...props} />)
+    )
+    const styleTags = sheet.getStyleElement()
+    return { assets, data, ...page, styleTags }
   }
 
   render() {
-    const { helmet, assets, data } = this.props
+    const { helmet, assets, data, styleTags } = this.props
     // get attributes from React Helmet
     const htmlAttrs = helmet.htmlAttributes.toComponent()
     const bodyAttrs = helmet.bodyAttributes.toComponent()
@@ -24,9 +28,8 @@ class Document extends React.Component {
           {helmet.title.toComponent()}
           {helmet.meta.toComponent()}
           {helmet.link.toComponent()}
-          {assets.client.css && (
-            <link rel="stylesheet" href={assets.client.css} />
-          )}
+          {/** here is where we put our Styled Components styleTags... */}
+          {styleTags}
         </head>
         <body {...bodyAttrs}>
           <AfterRoot />
@@ -42,5 +45,3 @@ class Document extends React.Component {
     )
   }
 }
-
-export default Document
